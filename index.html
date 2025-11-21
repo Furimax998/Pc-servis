@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online PC Servis</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Ikony -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-jQ0WxMj3ZcM0rjhqNQv6+f5tJXy0bM+iDhzI0mxnEhH7sF1JvIuG8G7z7cF+U/oD9vLFK6clvBrvRFVJy6r/9w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        * {margin:0; padding:0; box-sizing:border-box; font-family: 'Roboto', sans-serif;}
+        body {background: #f9f9f9; color: #333;}
+        a {text-decoration: none; color: inherit;}
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #1f3c88, #00b894);
+            color: #fff;
+            padding: 80px 20px;
+            text-align: center;
+        }
+        header h1 {font-size: 3rem; margin-bottom: 20px;}
+        header p {font-size: 1.3rem; margin-bottom: 30px;}
+        .btn {background: #fff; color: #1f3c88; padding: 15px 35px; border-radius: 50px; font-weight: 700; transition: 0.3s;}
+        .btn:hover {background: #f1f1f1; transform: scale(1.05);}
+
+        /* Sections */
+        section {padding: 80px 20px; max-width: 1100px; margin: auto;}
+        h2 {text-align: center; margin-bottom: 50px; font-size: 2.5rem; color: #1f3c88;}
+
+        /* Cards */
+        .flex {display: flex; flex-wrap: wrap; justify-content: center; gap: 30px;}
+        .card {
+            background: #fff;
+            padding: 30px 20px;
+            flex: 1 1 300px;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .card:hover {transform: translateY(-10px); box-shadow: 0 12px 25px rgba(0,0,0,0.15);}
+        .card i {font-size: 3rem; color: #00b894; margin-bottom: 15px;}
+        .card h3 {margin-bottom: 15px; color: #1f3c88;}
+
+        /* Form */
+        form {
+            background: #fff;
+            padding: 40px 30px;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            max-width: 600px;
+            margin: auto;
+        }
+        form input, form textarea {width: 100%; padding: 15px; margin-bottom: 20px; border: 1px solid #ccc; border-radius: 10px; font-size: 1rem;}
+        form button {width: 100%; background: #1f3c88; color: #fff; border:none; padding: 15px; font-size: 1.1rem; border-radius: 50px; cursor:pointer; transition: 0.3s; font-weight:700;}
+        form button:hover {background: #16315a; transform: scale(1.03);}
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            header h1 {font-size: 2.2rem;}
+            header p {font-size: 1.1rem;}
+            h2 {font-size: 2rem;}
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Online PC Servis</h1>
+    <p>Zrychlíme váš počítač, opravíme problémy a vylepšíme herní výkon – pohodlně online.</p>
+    <a href="#kontakt" class="btn">Objednat službu</a>
+</header>
+
+<section id="sluzby">
+    <h2>Naše služby</h2>
+    <div class="flex">
+        <div class="card">
+            <i class="fas fa-tachometer-alt"></i>
+            <h3>Optimalizace výkonu</h3>
+            <p>Odstraníme zbytečné programy, zrychlíme start systému a celkově vylepšíme chod počítače.</p>
+        </div>
+        <div class="card">
+            <i class="fas fa-tools"></i>
+            <h3>Oprava problémů</h3>
+            <p>Řešíme viry, chybové hlášky, pomalý PC a jiné běžné problémy.</p>
+        </div>
+        <div class="card">
+            <i class="fas fa-gamepad"></i>
+            <h3>Vylepšení herního výkonu</h3>
+            <p>Nastavení grafiky, ovladačů a optimalizace výkonu pro plynulé hraní.</p>
+        </div>
+    </div>
+</section>
+
+<section id="jak">
+    <h2>Jak to funguje</h2>
+    <div class="flex">
+        <div class="card">
+            <i class="fas fa-envelope"></i>
+            <h3>Krok 1</h3>
+            <p>Kontaktujte nás přes formulář níže.</p>
+        </div>
+        <div class="card">
+            <i class="fas fa-comments"></i>
+            <h3>Krok 2</h3>
+            <p>Popište problém nebo požadavky na vylepšení.</p>
+        </div>
+        <div class="card">
+            <i class="fas fa-desktop"></i>
+            <h3>Krok 3</h3>
+            <p>Připojíme se online a vše opravíme či optimalizujeme.</p>
+        </div>
+    </div>
+</section>
+
+<section id="kontakt">
+    <h2>Kontaktujte nás</h2>
+    <form id="kontaktForm">
+        <input type="text" name="jmeno" placeholder="Vaše jméno" required>
+        <input type="email" name="email" placeholder="Váš e-mail" required>
+        <textarea name="zprava" placeholder="Popište svůj problém" rows="5" required></textarea>
+        <button type="submit">Odeslat</button>
+    </form>
+</section>
+
+<script>
+    document.getElementById('kontaktForm').addEventListener('submit', function(e){
+        e.preventDefault();
+        alert('Děkujeme! Vaše zpráva byla odeslána.');
+        this.reset();
+    });
+</script>
+
+</body>
+</html>
